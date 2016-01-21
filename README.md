@@ -1,3 +1,3 @@
-# Simple task manager
+# Task manager demo
 
 Тестовое задание
