@@ -14,17 +14,19 @@ RSpec.describe Task, type: :model do
       expect(task.state).to eq("new")
     end
 
-    it "can change state from 'new' to 'started'" do
-      expect { task.start }.to change(task, :state).from("new").to("started")
-    end
+    describe "can change state" do
+      it "from 'new' to 'started'" do
+        expect { task.start }.to change(task, :state).from("new").to("started")
+      end
 
-    it "can change state from 'new' to 'finished'" do
-      expect { task.finish }.to change(task, :state).from("new").to("finished")
-    end
+      it "from 'new' to 'finished'" do
+        expect { task.finish }.to change(task, :state).from("new").to("finished")
+      end
 
-    it "can change state from 'started' to 'finished'" do
-      task.start
-      expect { task.finish }.to change(task, :state).from("started").to("finished")
+      it "from 'started' to 'finished'" do
+        task.start
+        expect { task.finish }.to change(task, :state).from("started").to("finished")
+      end
     end
   end
 
