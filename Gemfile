@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'aasm', '~> 4.7'
 gem 'fabrication'
 gem 'devise'
+gem 'carrierwave'
 
 # gem 'bcrypt', '~> 3.1.7'
 
