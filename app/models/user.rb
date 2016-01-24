@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
   has_many :tasks
   
   validates :email, presence: true
-  validates :password, presence: true
+  validates :password, presence: true, length: { minimum: 8 }
+  validates :password_confirmation, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
 

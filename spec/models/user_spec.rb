@@ -6,13 +6,8 @@ RSpec.describe User, type: :model do
   end
 
   describe "initialized in before(:each)" do
-    it "can build" do
-      expect(@user.email).to eq("user@user.user")
-    end
-
     it "can be created" do
-      @user.save!
-      expect(User.count).to eq(1)
+      expect { @user.save! }.to change(User, :count).from(0).to(1)
     end
 
     it "is invalid without email" do
@@ -22,6 +17,11 @@ RSpec.describe User, type: :model do
 
     it "is invalid without password" do
       @user.password = nil
+      expect(@user).to be_invalid
+    end
+
+    it "is invalid without password confirmation" do
+      @user.password_confirmation = nil
       expect(@user).to be_invalid
     end
 

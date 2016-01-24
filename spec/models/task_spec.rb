@@ -6,13 +6,8 @@ RSpec.describe Task, type: :model do
   end
 
   describe "initialized in before(:each)" do
-    it "can build" do
-      expect(@task.name).to eq("Task 1")
-    end
-
     it "can be created" do
-      @task.save!
-      expect(Task.count).to eq(1)
+      expect { @task.save! }.to change(Task, :count).from(0).to(1)
     end
 
     it "is invalid without name" do
