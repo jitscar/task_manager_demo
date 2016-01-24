@@ -19,5 +19,39 @@ RSpec.describe Task, type: :model do
       @task.name = nil
       expect(@task).to be_invalid
     end
+
+    it "is invalid without state" do
+      @task.state = nil
+      expect(@task).to be_invalid
+    end
+
+    it "has 'new' value in state by default" do
+      expect(@task.state).to eq("new")
+    end
+
+    it "can change state from 'new' to 'started'" do
+      expect_that_started
+    end
+
+    it "can change state from 'new' to 'finished'" do
+      expect_that_finished
+    end
+
+    it "can change state from 'started' to 'finished'" do
+      expect_that_started
+      expect_that_finished
+    end
+
+    private
+
+    def expect_that_started
+      @task.start
+      expect(@task.state).to eq("started")
+    end
+
+    def expect_that_finished
+      @task.finish
+      expect(@task.state).to eq("finished")
+    end
   end
 end
