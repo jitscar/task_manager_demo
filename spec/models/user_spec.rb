@@ -10,6 +10,10 @@ RSpec.describe User, type: :model do
       expect { @user.save! }.to change(User, :count).from(0).to(1)
     end
 
+    it "has an array of tasks" do
+      expect(@user.tasks).to eq([])
+    end
+
     it "is invalid without email" do
       @user.email = nil
       expect(@user).to be_invalid

@@ -109,7 +109,7 @@ RSpec.describe TasksController, type: :controller do
     login_user
     context "with valid params" do
       let(:new_attributes) {
-        { state: "started" }
+        { state: "started", user_id: User.first.id }
       }
 
       it "updates the requested task" do
@@ -117,6 +117,7 @@ RSpec.describe TasksController, type: :controller do
         put :update, {:id => task.to_param, :task => new_attributes}, valid_session
         task.reload
         expect(task.state).to eq("started")
+        expect(task.user_id).to eq(User.first.id)
       end
 
       it "assigns the requested task as @task" do

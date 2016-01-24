@@ -13,6 +13,7 @@ class TasksController < ApplicationController
   end
 
   def edit
+
   end
 
   def create
@@ -56,6 +57,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:name, :description, :state)
+    params.require(:task).permit(:name, :description, :state, :user_id)
   end
 end
