@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
     end
 
     it "can be created" do
-      @user.save
+      @user.save!
       expect(User.count).to eq(1)
     end
 
