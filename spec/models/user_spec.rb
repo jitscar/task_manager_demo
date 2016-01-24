@@ -19,34 +19,39 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe "with current validation" do
-    it "is invalid without email" do
+  describe "is invalid" do
+    it "without email" do
       user.email = nil
       expect(user).to be_invalid
     end
 
-    it "is invalid without password" do
+    it "without password" do
       user.password = nil
       expect(user).to be_invalid
     end
 
-    it "is invalid without password confirmation" do
+    it "when password is not at least 8 characters" do
+      user.password = "abc456"
+      expect(user).to be_invalid
+    end
+
+    it "without password_confirmation" do
       user.password_confirmation = nil
       expect(user).to be_invalid
     end
 
-    it "is invalid without first name" do
+    it "without first name" do
       user.first_name = nil
       expect(user).to be_invalid
     end
 
-    it "is invalid without last name" do
+    it "without last name" do
       user.last_name = nil
       expect(user).to be_invalid
     end
+  end
 
-    it "is completely valid" do
-      expect(user).to be_valid
-    end
+  it "is completely valid" do
+    expect(user).to be_valid
   end
 end

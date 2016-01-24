@@ -28,8 +28,8 @@ RSpec.describe Task, type: :model do
     end
   end
 
-  describe "with current validation" do
-    it "is invalid without name" do
+  describe "is invalid" do
+    it "without name" do
       task.name = nil
       expect(task).to be_invalid
     end
@@ -38,9 +38,9 @@ RSpec.describe Task, type: :model do
       task.state = nil
       expect(task).to be_invalid
     end
+  end
 
-    it "is completely valid" do
-      expect(task).to be_valid
-    end
+  it "is completely valid" do
+    expect(task).to be_valid
   end
 end
