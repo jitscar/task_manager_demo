@@ -38,5 +38,9 @@ RSpec.describe User, type: :model do
     it "is completely valid" do
       expect(@user).to be_valid
     end
+
+    it "has correct full_name" do
+      expect(@user.full_name).to eq("#{@user.first_name} #{@user.last_name}")
+    end
   end
 end
