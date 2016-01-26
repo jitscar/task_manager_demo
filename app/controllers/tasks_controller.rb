@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy, :start, :finish]
+  load_and_authorize_resource
 
   def index
     @tasks = Task.all

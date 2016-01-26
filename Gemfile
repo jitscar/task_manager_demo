@@ -14,8 +14,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'aasm', '~> 4.7'
-gem 'fabrication'
 gem 'devise'
+gem 'cancancan'
+gem 'rolify'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 # gem 'bcrypt', '~> 3.1.7'

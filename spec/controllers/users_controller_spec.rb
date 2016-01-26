@@ -70,7 +70,7 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "POST #create" do
-    login_user
+    login_admin
     context "with valid params" do
       it "creates a new User" do
         expect {
@@ -104,7 +104,7 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "PUT #update" do
-    login_user
+    login_admin
     context "with valid params" do
       let(:new_attributes) {
         { first_name: "Jurgen", last_name: "Klopp" }
@@ -148,7 +148,7 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    login_user
+    login_admin
     it "destroys the requested user" do
       user = User.create! valid_attributes
       expect {
