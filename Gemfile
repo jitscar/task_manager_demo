@@ -41,3 +41,8 @@ group :test do
   gem 'faker'
   gem 'database_cleaner', '~> 1.5', '>= 1.5.1'
 end
+
+group :production do
+  gem 'unicorn'
+  gem 'newrelic_rpm'
+end
