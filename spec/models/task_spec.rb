@@ -7,7 +7,7 @@ RSpec.describe Task, type: :model do
 
   describe "object" do
     it "can be created" do
-      expect { task.save! }.to change(Task, :count).from(0).to(1)
+      expect { task.save! }.to change(Task, :count).by(1)
     end
 
     it "has 'new' value in state by default" do

@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
 
   describe "object" do
     it "can be created" do
-      expect { user.save! }.to change(User, :count).from(0).to(1)
+      expect { user.save! }.to change(User, :count).by(1)
     end
 
     it "has an array of tasks" do
