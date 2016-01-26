@@ -1,0 +1,2 @@
+<%= link_to "Start", start_task_path(@task), method: :put unless @task.started? %><br>
+<%= link_to "Finish", finish_task_path(@task) , method: :put %>

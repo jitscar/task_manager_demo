@@ -22,4 +22,12 @@ class Task < ActiveRecord::Base
       transitions from: [:new, :started], to: :finished
     end
   end
+
+  def started?
+    state.eql?("started")
+  end
+
+  def finished?
+    state.eql?("finished")
+  end
 end

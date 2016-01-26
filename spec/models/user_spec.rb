@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     FactoryGirl.build(:user)
   }
 
-  describe "model" do
+  describe "object" do
     it "can be created" do
       expect { user.save! }.to change(User, :count).from(0).to(1)
     end

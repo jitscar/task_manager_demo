@@ -21,22 +21,16 @@
       <%= f.text_area :description, class: "form-control" %>
     </div>
     <div class="field form-group">
-      <%= f.label :state %><br>
-      <%= f.text_field :state %>
-    </div>
-
-    <div class="field form-group">
       <%= f.label :user %><br>
       <%= collection_select(:task, :user_id, User.all, :id, :full_name, {prompt: true}, {class: "form-control"}) %>
     </div>
-
     <div class="field form-group">
       <%= f.label :attachments %><br>
       <%= f.file_field :attachments, multiple: true %>
     </div>
 
     <div class="actions">
-      <%= f.submit "Create Task", class: 'btn btn-primary' %>
+      <%= f.submit class: 'btn btn-primary' %>
     </div>
   <% end %>
 </div>

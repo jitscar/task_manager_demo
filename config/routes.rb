@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
-  resources :users
-  resources :tasks
-
   root 'tasks#index'
+
+  resources :users
+  resources :tasks do
+    member do
+      put :start
+      put :finish
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

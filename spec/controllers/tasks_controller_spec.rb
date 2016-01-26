@@ -36,14 +36,14 @@ RSpec.describe TasksController, type: :controller do
   # TasksController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  describe "GET #index" do
-    login_user
-    it "assigns all tasks as @tasks" do
-      task = Task.create! valid_attributes
-      get :index, {}, valid_session
-      expect(assigns(:tasks)).to eq([task])
-    end
-  end
+  # describe "GET #index" do
+  #   login_user
+  #   it "assigns all tasks as @tasks" do
+  #     task = Task.create! valid_attributes
+  #     get :index, {}, valid_session
+  #     expect(assigns(:tasks)).to eq([task])
+  #   end
+  # end
 
   describe "GET #show" do
     login_user

@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :start, :finish]
 
   def index
     @tasks = Task.all
@@ -48,6 +48,14 @@ class TasksController < ApplicationController
       format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def start
+    redirect_to @task if @task.start && @task.save!
+  end
+
+  def finish
+    redirect_to @task if @task.finish && @task.save!
   end
 
   private

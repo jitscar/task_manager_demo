@@ -1,0 +1,7 @@
+<div class="col-sm-6 col-md-4 col-md-offset-4">
+  <div class="field form-group">
+    <%= label_tag :current_state %> <br>
+    <h3><%= @task.state %></h3><br>
+    <%= render partial: 'partials/task/links' unless @task.finished? %>
+  </div>
+</div>

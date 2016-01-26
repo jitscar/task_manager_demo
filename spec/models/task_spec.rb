@@ -5,7 +5,7 @@ RSpec.describe Task, type: :model do
     FactoryGirl.build(:task)
   }
 
-  describe "model" do
+  describe "object" do
     it "can be created" do
       expect { task.save! }.to change(Task, :count).from(0).to(1)
     end
@@ -26,6 +26,14 @@ RSpec.describe Task, type: :model do
       it "from 'started' to 'finished'" do
         task.start
         expect { task.finish }.to change(task, :state).from("started").to("finished")
+      end
+
+      it "#started? true when start" do
+        expect { task.start }.to change(task, :started?).to true
+      end
+
+      it "#finished? true when finish" do
+        expect { task.finish }.to change(task, :finished?).to true
       end
     end
   end
