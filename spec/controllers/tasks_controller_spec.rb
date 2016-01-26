@@ -36,14 +36,14 @@ RSpec.describe TasksController, type: :controller do
   # TasksController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  # describe "GET #index" do
-  #   login_user
-  #   it "assigns all tasks as @tasks" do
-  #     task = Task.create! valid_attributes
-  #     get :index, {}, valid_session
-  #     expect(assigns(:tasks)).to eq([task])
-  #   end
-  # end
+  describe "GET #index" do
+    login_user
+    it "assigns all tasks as @tasks" do
+      task = Task.create! valid_attributes
+      get :index, {}, valid_session
+      expect(assigns(:tasks)).to eq([task])
+    end
+  end
 
   describe "GET #show" do
     login_user
@@ -109,14 +109,14 @@ RSpec.describe TasksController, type: :controller do
     login_user
     context "with valid params" do
       let(:new_attributes) {
-        { state: "started", user_id: User.first.id }
+        { name: "New task", user_id: User.first.id }
       }
 
       it "updates the requested task" do
         task = Task.create! valid_attributes
         put :update, {:id => task.to_param, :task => new_attributes}, valid_session
         task.reload
-        expect(task.state).to eq("started")
+        expect(task.name).to eq("New task")
         expect(task.user_id).to eq(User.first.id)
       end
 
@@ -164,4 +164,37 @@ RSpec.describe TasksController, type: :controller do
     end
   end
 
+  describe "GET #start" do
+    login_user
+
+    it "updates the state of @task to started" do
+      task = Task.create! valid_attributes
+      put :start, {:id => task.to_param}, valid_session
+      task.reload
+      expect(task.state).to eq("started")
+    end
+
+    it "redirects to the task" do
+      task = Task.create! valid_attributes
+      put :start, {:id => task.to_param}, valid_session
+      expect(response).to redirect_to(task)
+    end
+  end
+
+  describe "GET #finish" do
+    login_user
+
+    it "updates the state of @task to finished" do
+      task = Task.create! valid_attributes
+      put :finish, {:id => task.to_param}, valid_session
+      task.reload
+      expect(task.state).to eq("finished")
+    end
+
+    it "redirects to the task" do
+      task = Task.create! valid_attributes
+      put :finish, {:id => task.to_param}, valid_session
+      expect(response).to redirect_to(task)
+    end
+  end
 end
