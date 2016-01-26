@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.1'
 
 gem 'rails', '4.2.5'
 gem 'mysql2', '>= 0.3.13', '< 0.5'
@@ -45,4 +46,6 @@ end
 group :production do
   gem 'unicorn'
   gem 'newrelic_rpm'
+  gem 'rails_12factor'
+  gem 'pg'
 end
