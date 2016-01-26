@@ -2,7 +2,7 @@ class Task < ActiveRecord::Base
   STATES = %w(new started finished)
 
   belongs_to :user
-  mount_uploader :attachments, AttachmentUploader
+  mount_uploaders :attachments, AttachmentUploader
 
   validates :name, presence: true
   validates :state, presence: true, inclusion: { in: STATES }

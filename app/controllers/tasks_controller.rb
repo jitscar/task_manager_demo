@@ -13,7 +13,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-
+    @attachments = @task.attachments
   end
 
   def create

@@ -26,6 +26,7 @@
     </div>
     <div class="field form-group">
       <%= f.label :attachments %><br>
+      <%= render partial: 'partials/task/attachments' if @attachments %>
       <%= f.file_field :attachments, multiple: true %>
     </div>
 
