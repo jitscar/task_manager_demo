@@ -19,6 +19,3 @@
 public/uploads
 public/tmp
 
-# Ignore config files
-config/database.yml
-config/secrets.yml
