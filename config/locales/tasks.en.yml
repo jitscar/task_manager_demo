@@ -1,3 +1,19 @@
 en:
-  form:
-    not_assigned: "Not assigned"
+  tasks:
+    index:
+      title: Listing Tasks
+    new:
+      title: New Task
+    edit:
+      title: Editing Task
+    labels:
+      name: Name
+      description: Description
+      state: State
+      user: User
+      not_assigned: Not assigned
+    links:
+      new: New Task
+      start: Start
+      finish: Finish
+

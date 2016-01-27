@@ -1,0 +1,13 @@
+en:
+  users:
+    index:
+      title: Listing Users
+    new:
+      title: New User
+    edit:
+      title: Editing User
+    labels:
+      email: Email
+      password: Password
+    links:
+      new: New User

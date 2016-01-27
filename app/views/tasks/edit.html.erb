@@ -1,7 +1,7 @@
-<h1>Editing Task</h1>
+<h1><%= t('tasks.edit.title') %></h1>
 
 <%= render partial: 'partials/task/current_state' %>
 <%= render 'form' %>
 
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to t('actions.show'), @task %> |
+<%= link_to t('actions.back'), tasks_path %>

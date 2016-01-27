@@ -1,11 +1,11 @@
 <footer class="footer">
   <small>
-    <a href="https://github.com/jitscar/task_manager_demo">Task Manager Demo</a>
-    by jitscar
+    <a href="https://github.com/jitscar/task_manager_demo"><%= t('application.title') %></a>
+    <% t('application.footer.author') %>
   </small>
   <nav>
     <ul>
-      <li><%= link_to "Contact", "https://github.com/jitscar" %></li>
+      <li><%= link_to t('application.footer.contact'), "https://github.com/jitscar" %></li>
     </ul>
   </nav>
 </footer>

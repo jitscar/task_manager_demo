@@ -1,12 +1,12 @@
 <p>
-  <strong>Email:</strong>
+  <strong><%= t('users.labels.email') %>:</strong>
   <%= @user.email %>
 </p>
 
 <p>
-  <strong>Password:</strong>
+  <strong><%= t('users.labels.password') %>:</strong>
   <%= @user.password %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to t('actions.edit'), edit_user_path(@user) %> |
+<%= link_to t('actions.back'), users_path %>
