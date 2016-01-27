@@ -6,7 +6,7 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <%= nav_link 'Home', root_path %>
+        <%= nav_link 'Home', root_path if user_signed_in? %>
 
         <% if user_signed_in? %>
           <%= nav_link 'Edit Profile', edit_user_registration_path %>
